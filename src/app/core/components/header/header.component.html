@@ -1,0 +1,7 @@
+<header>
+  <div class="header">
+    <app-search-input class="header__search" (showFilters)="toggleShowFiltersBtn()"></app-search-input>
+    <app-user-bar></app-user-bar>
+  </div>
+  <app-filters *ngIf="isSortingBlockVisible"></app-filters>
+</header>

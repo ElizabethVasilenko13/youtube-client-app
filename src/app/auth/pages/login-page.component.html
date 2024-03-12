@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Login</h2>
+  <form class="form" [formGroup]="auth.loginForm" (ngSubmit)="onSubmit()">
+    <app-form-control
+      label="Login"
+      controlName="login"
+      [control]="auth.loginForm.get('login')"
+      [isRequired]="true"
+    ></app-form-control>
+    <app-form-control
+      label="Password"
+      controlName="password"
+      [control]="auth.loginForm.get('password')"
+      [isRequired]="true"
+      type="password"
+    ></app-form-control>
+    <div class="button-container">
+      <app-button
+        [customClass]="'item__button'"
+        [type]="'submit'"
+        [disabled]="auth.loginForm.invalid"
+        [title]="'Login'"
+        [buttonTemplate]="loginBtnTemplate"
+      >
+        <ng-template #loginBtnTemplate>Login</ng-template>
+      </app-button>
+    </div>
+  </form>
+</div>
